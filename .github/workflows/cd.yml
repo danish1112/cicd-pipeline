@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - name: Pull Docker image
-      run: docker pull danishyousuf/cicd-pipeline:latest
+      run: sudo docker pull danishyousuf/cicd-pipeline:latest
     - name : Delete old Docker container
-      run: docker rm -f cicd-pipeline-container || true
+      run: sudo docker rm -f cicd-pipeline-container || true
     - name: Run Docker container
-      run: docker run -d -p 8083:8083 --name cicd-pipeline-container danishyousuf/cicd-pipeline
+      run: sudo docker run -d -p 8083:8083 --name cicd-pipeline-container danishyousuf/cicd-pipeline
       
